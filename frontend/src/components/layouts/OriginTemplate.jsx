@@ -22,10 +22,10 @@ const OrginTemplate = () => {
         <>
             {Object.keys(metaProps).length > 0 && <MetaComponent props={metaProps} />}
             <div>
-                <TopNavigationCompoennt />
-                <HeaderNavigationComponent />
-                <TopSliderComponent />
-                <Product1Component />
+                {/* <TopNavigationCompoennt />
+                <HeaderNavigationComponent /> */}
+                {/* <TopSliderComponent /> */}
+                {/* <Product1Component /> */}
                 <div className="mr-5 ml-5">
                     <Outlet />
                 </div>

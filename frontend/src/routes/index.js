@@ -8,7 +8,9 @@ import UserFormComponent from '../components/backend/user/UserFormComponent';
 
 import RoleTableComponent from "../components/backend/user/role/RoleTableComponent";
 import RoleFormComponent from '../components/backend/user/role/RoleFormComponent';
+
 import ThreeComponent from '../components/three/ThreeComponent';
+import ReduxComponent from '../components/redux/ReduxComponent';
 
 import LoginPage from "../components/layouts/auth/LoginPageComponent";
 const router = createBrowserRouter([
@@ -66,8 +68,12 @@ const router = createBrowserRouter([
                 element: <ForbiddenComponent />,
             },
             {
-                path: "three-tuturoals",
+                path: "three-tutorials",
                 element: <ThreeComponent />,
+            },
+            {
+                path: "redux-tutorials",
+                element: <ReduxComponent />,
             },
         ],
     },

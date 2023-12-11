@@ -13,12 +13,16 @@ import 'admin-lte/dist/js/adminlte.min.js'
 
 import {RouterProvider} from 'react-router-dom';
 import router from './routes';
+import { Provider } from 'react-redux';
+import store  from './store/store';
 
 window.$ = window.jQuery = $;
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+    <React.StrictMode>
+        <Provider store={store}>
+          <RouterProvider router={router} />
+      </Provider>
+    </React.StrictMode>
 );
