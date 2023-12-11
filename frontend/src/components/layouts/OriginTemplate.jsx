@@ -3,10 +3,12 @@ import MetaComponent from "./MetaComponent";
 import { useEffect, useState } from 'react';
 import TopNavigationCompoennt from './TopNavigationComponent';
 import HeaderNavigationComponent from './HeaderNavigationComponent';
-const OrginTemplate = () =>{
+import TopSliderComponent from './TopSliderComponent';
+import Product1Component from '../product/Product1Component';
+const OrginTemplate = () => {
     const [metaProps, setMeta] = useState({});
-    
-    useEffect(()=>{
+
+    useEffect(() => {
         setMeta({
             title: "Home Page",
             description: "Home Page",
@@ -18,11 +20,13 @@ const OrginTemplate = () =>{
 
     return (
         <>
-            { Object.keys(metaProps).length > 0 && <MetaComponent props={metaProps} /> }
+            {Object.keys(metaProps).length > 0 && <MetaComponent props={metaProps} />}
             <div>
-               <TopNavigationCompoennt />
-               <HeaderNavigationComponent />
-                <div className="container">
+                <TopNavigationCompoennt />
+                <HeaderNavigationComponent />
+                <TopSliderComponent />
+                <Product1Component />
+                <div className="mr-5 ml-5">
                     <Outlet />
                 </div>
             </div>
