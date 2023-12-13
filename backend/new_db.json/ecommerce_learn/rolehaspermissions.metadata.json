@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"32ed08295f72420e88ef00a51a3c37f6","collectionName":"rolehaspermissions","type":"collection"}

@@ -14,7 +14,7 @@ const ReduxComponent = ()=>{
     useEffect(()=>{
         // dispatch(getUsers());
         // console.log(users);
-        console.log("dddsdf ");
+        console.log("dd ");
     }, []);
 
     return(
