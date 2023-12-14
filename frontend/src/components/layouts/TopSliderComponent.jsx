@@ -9,7 +9,6 @@ const TopSliderComponent = () => {
                        let nextEl = element.nextElementSibling;
                        let parentEl  = element.parentElement;
                        let allSubmenus_array =	parentEl.querySelectorAll('.submenu');
-           
                        if(nextEl && nextEl.classList.contains('submenu')) {	
                            e.preventDefault();	
                            if(nextEl.style.display == 'block'){
@@ -27,8 +26,8 @@ const TopSliderComponent = () => {
         initializeSideMenu();
     }, []);
     return (
-        <div className='mr-5 ml-5'>
-            <div className="row">
+        <div className='mr-5 ml-5 mb-0 mt-0 pb-0 pt-0'>
+            <div className="row  mb-0 mt-0 pb-0 pt-0">
                 <div className='col-md-2 front-sidebar'>
                     <nav className="sidebar card py-2 mb-4">
                         <ul className="nav flex-column">

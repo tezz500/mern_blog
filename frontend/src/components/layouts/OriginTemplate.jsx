@@ -5,6 +5,8 @@ import TopNavigationCompoennt from './TopNavigationComponent';
 import HeaderNavigationComponent from './HeaderNavigationComponent';
 import TopSliderComponent from './TopSliderComponent';
 import Product1Component from '../product/Product1Component';
+import TagComponent from '../product/component/TagComponent';
+import FlashSaleComponent from '../product/component/FlashSaleComponent';
 const OrginTemplate = () => {
     const [metaProps, setMeta] = useState({});
 
@@ -22,10 +24,12 @@ const OrginTemplate = () => {
         <>
             {Object.keys(metaProps).length > 0 && <MetaComponent props={metaProps} />}
             <div>
-                <TopNavigationCompoennt />
+                {/* <TopNavigationCompoennt />
                 <HeaderNavigationComponent />
                 <TopSliderComponent />
-                {/* <Product1Component /> */}
+                <Product1Component /> */}
+                {/* <TagComponent /> */}
+                <FlashSaleComponent />
                 <div className="mr-5 ml-5">
                     <Outlet />
                 </div>

@@ -1,4 +1,4 @@
-const ItemComponent = (props) => {
+const FlashProduct = (props) => {
     return (
         <div class="wsk-cp-product">
             <div class="wsk-cp-img">
@@ -10,9 +10,6 @@ const ItemComponent = (props) => {
                 </div>
                 <div class="title-product">
                     <h3>{props.product.title}</h3>
-                </div>
-                <div class="description-prod">
-                    <p>{props.product.small_slug}</p>
                 </div>
                 <div class="card-footer">
                     <div class="wcf-left">
@@ -31,4 +28,4 @@ const ItemComponent = (props) => {
     )
 }
 
-export default ItemComponent
+export default FlashProduct

@@ -16,7 +16,7 @@ const HeaderNavigationComponent = () => {
                     </ul>
                     <form class="form-inline mr-auto">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button class="btn btn-outline-success" type="submit">
+                        <button class="btn btn-outline-success main-btn-color" type="submit">
                             <i className="fa fa-search"></i>
                         </button>
                     </form>
