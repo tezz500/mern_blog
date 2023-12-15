@@ -15,7 +15,7 @@ const ChatController ={
     }),
     sendMessage:CatchAsyncError(async(req, res, next)=>{
         const sender_id = req.body.sender_id;
-        const receiver_id = req.body.sender_id;
+        const receiver_id = req.body.receiver_id;
         let chat = await Chat.findOne({sender:sender_id, receiver:receiver_id});
         if(!chat){
             chat = Chat.create({
@@ -38,6 +38,8 @@ const ChatController ={
         });
     }),
     getMessage:CatchAsyncError(async(req, res, next)=>{
+        const sender_id = req.body.sender_id;
+        const receiver_id = req.body.receiver_id;
         let chat = await Chat.findOne({sender:sender_id, receiver:receiver_id});
         if(!chat){
             chat = Chat.create({
