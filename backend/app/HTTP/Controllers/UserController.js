@@ -83,7 +83,6 @@ exports.index = CatchAsyncError(async (req, res, next)=>{
 exports.store =[
     ...UserRequest,
     CatchAsyncError(async (req, res, next)=>{
-        console.log(req.body);
         const { password } = matchedData(req);
         if (password) {
             await body('confirm_password')
@@ -91,7 +90,6 @@ exports.store =[
               .withMessage('passwords do not match')
               .run(req);
         }
-
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return getValidationErrors(req, res);
