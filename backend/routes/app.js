@@ -9,6 +9,7 @@ const errorMiddleware = require('../app/Middleware/Error');
 const products = require('./product');
 const users = require('./user');
 const roles = require('./roles');
+const chats = require('./chat');
 const { testAllQueries } = require('../app/Helpers/QueryTester')
 
 app.get('/test-query', testAllQueries);
@@ -22,6 +23,7 @@ app.use(cors());
 app.use('/api/v1', products);
 app.use('/api/v1', users);
 app.use('/api/v1', roles);
+app.use('/api/v1', chats);
 
 // using error middleware
 app.use(errorMiddleware);
