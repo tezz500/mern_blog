@@ -48,4 +48,27 @@ const getHashValue = async (password) => {
     return await bcrypt.hash(password, 10);
 }
 
-module.exports =  { getPermissions, can, getValidationErrors, getHashValue}
+const getSlug = (str)=> {
+    return str
+        .toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[^\w\-]+/g, '')
+        .replace(/\-\-+/g, '-')
+        .replace(/^-+/, '') 
+        .replace(/-+$/, '');
+}
+
+
+
+const getRandom = ()=>{
+    var characters = "ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";  
+    var lenString = 7;  
+    var randomstring = '';  
+    for (var i=0; i<lenString; i++) {  
+    var rnum = Math.floor(Math.random() * characters.length);  
+        randomstring += characters.substring(rnum, rnum+1); 
+    }
+    return randomstring;
+}
+
+module.exports =  { getPermissions, can, getValidationErrors, getHashValue, getSlug, getRandom}

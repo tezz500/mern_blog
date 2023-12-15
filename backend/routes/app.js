@@ -9,9 +9,13 @@ const errorMiddleware = require('../app/Middleware/Error');
 const products = require('./product');
 const users = require('./user');
 const roles = require('./roles');
+const { testAllQueries } = require('../app/Helpers/QueryTester')
+
+app.get('/test-query', testAllQueries);
+
 
 app.get('/', (req, res, next)=>{
-    res.send("Welcome to the ecommerce tutorials");
+    res.send("Welcome to the MERN STACK tutorials");
 });
 
 app.use(cors());
