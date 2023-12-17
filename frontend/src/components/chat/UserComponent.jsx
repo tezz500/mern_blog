@@ -5,12 +5,13 @@ const socket = io('http://localhost:5000');
 const UserComponent = (props)=>{
     const [online, setOnline] = useState(false);
     useEffect(()=>{
-        console.log('listining on ', `online-${props.user._id}`);
-        socket.on(`online-${props.user._id}`, (data) => {
+        console.log(props.user);
+        console.log(props.user._id);
+        socket.on(`check-online`, (data) => {
+            console.log("Actual Listening On ");
             console.log(data);
-            setOnline(true);
         });
-    }, [online]);
+    },[online, props.user._id]);
     return(
         <div>
             {props.user.name}

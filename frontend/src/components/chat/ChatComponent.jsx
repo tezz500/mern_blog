@@ -30,9 +30,19 @@ const ChatComponent = () => {
 
     useEffect(() => {
         dispatch(getUsers());
-        setOwner(userInfo());
-        socket.emit('online', { owner:userInfo() });
-    }, [setOwner]);
+        const owner = userInfo();
+        setOwner(owner);
+    }, [setOwner, userInfo()._id]);
+
+    useEffect(()=>{
+        const allUserIds = users.map(item=>item._id);
+        socket.emit('online', { owner:owner, listener:allUserIds });
+        // socket.on(`check-online`, (data) => {
+        //     console.log("Actual Listening On ");
+        //     console.log(data);
+        // });
+
+    }, [users]);
 
     const getMessage = async () => {
         await axios.get('get-messages', {

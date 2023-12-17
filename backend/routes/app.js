@@ -19,8 +19,10 @@ io.on('connection', (socket) => {
 
     socket.on('online', (data)=>{
         console.log(data);
-        console.log(`Emmiting on online-${data.owner._id}`);
-        socket.emit(`online-${data.owner._id}`, data);
+        console.log(`Emmiting on check-online`);
+
+        for(const listen of data.)
+        socket.emit(`check-online`, data);
     });
 });
 
