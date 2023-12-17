@@ -1,5 +1,31 @@
 const express = require('express');
 const app = express();
+
+const { Server } = require('socket.io');
+const http = require('http');
+const server = http.createServer(app);
+const io = new Server(server, { cors: { origin: '*' } });
+
+// Socket.io handling
+io.on('connection', (socket) => {
+    console.log('A user connected');
+    socket.on('disconnect', () => {
+      console.log('User disconnected');
+    });
+
+    socket.on('chat-message', (data) => {
+        console.log(data);
+    });
+
+    socket.on('online', (data)=>{
+        console.log(data);
+        console.log(`Emmiting on online-${data.owner._id}`);
+        socket.emit(`online-${data.owner._id}`, data);
+    });
+});
+
+
+
 const cors = require('cors');
 app.use(express.json());
 
@@ -27,5 +53,12 @@ app.use('/api/v1', chats);
 
 // using error middleware
 app.use(errorMiddleware);
+
+const PORT = process.env.PORT || 5000;
+
+server.listen(PORT, () => {
+    console.log(`Socket is running on port ${PORT}`);
+});
+
 
 module.exports = app;

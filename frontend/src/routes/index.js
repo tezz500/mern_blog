@@ -5,14 +5,12 @@ import BackendTemplate from "../components/backend/layouts/BackendTemplate";
 import BackendDashboard from '../components/backend/BackendDashboard';
 import UserTableComponent from "../components/backend/user/UserTableComponent";
 import UserFormComponent from '../components/backend/user/UserFormComponent';
-
 import RoleTableComponent from "../components/backend/user/role/RoleTableComponent";
 import RoleFormComponent from '../components/backend/user/role/RoleFormComponent';
-
 import ThreeComponent from '../components/three/ThreeComponent';
 import ReduxComponent from '../components/redux/ReduxComponent';
-
 import LoginPage from "../components/layouts/auth/LoginPageComponent";
+import ChatComponent from "../components/chat/ChatComponent";
 const router = createBrowserRouter([
     {
         path: "/admin",
@@ -74,6 +72,10 @@ const router = createBrowserRouter([
             {
                 path: "redux-tutorials",
                 element: <ReduxComponent />,
+            },
+            {
+                path: "chat-tutorials",
+                element: <ChatComponent />,
             },
         ],
     },

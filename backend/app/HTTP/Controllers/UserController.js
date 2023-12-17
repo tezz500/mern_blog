@@ -61,6 +61,7 @@ exports.login = CatchAsyncError(async (req, res, next)=>{
         message:"Successfully Logged In",
         token:token,
         userInfo:{
+            _id:user._id,
             name:user.name,
             email:user.email,
             role:user.role,

@@ -17,6 +17,10 @@ const messageSchema = new Schema({
         required:[true, 'Please Provide the receiver'],
         default:true,
     },
+    message:{
+        type:String,
+        required:[true, 'Please Provide message'],
+    }
 },{
     timestamps: true
 })
